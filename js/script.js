@@ -6,7 +6,7 @@ request.onload = function () {
     var response = request.response;
     var parsedData = JSON.parse(response);
     //console.log(parsedData);
-    var name = parsedData[0].name;
+    //var name = parsedData[0].name;
 
     var products = document.createElement('li');
     products.innerHTML = name;
