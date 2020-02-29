@@ -6,11 +6,17 @@ request.onload = function () {
     var response = request.response;
     var parsedData = JSON.parse(response);
     //console.log(parsedData);
-    //var name = parsedData[0].name;
 
-    var products = document.createElement('li');
-    products.innerHTML = name;
-    document.body.appendChild(products);
+  
+    for (var i = 0; i < parsedData.length; i++) {
+        var name = parsedData[i].name;
+        var products = document.createElement('li');
+        var image = document.createElement('img');
+        image.setAttribute("src", parsedData[i].image)
+        products.innerText = name;
+        document.body.appendChild(products);
+        document.body.appendChild(image);
+    }
+
 }
-
 request.send();
